@@ -15,5 +15,4 @@ class TextNode:
         self.url = None
 
 
-    def render(self) -> str:
-        return f"{self.text_type.value}: {self.content}"
+    
