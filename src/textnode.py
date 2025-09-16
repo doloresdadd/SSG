@@ -14,9 +14,11 @@ class TextNode:
         self.text = text
         self.url = None
 
-    def __eq__(self, other):
+    d def __eq__(self, other):
         if not isinstance(other, TextNode):
             return False
-        return true if self.text == other.text && self.text_type == other.text_type && self.url == other.url else False 
-
-    
+        return (
+            self.text == other.text and
+            self.text_type == other.text_type and
+            self.url == other.url
+        )
