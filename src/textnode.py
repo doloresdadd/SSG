@@ -9,10 +9,10 @@ class TextTypes(Enum):
     IMAGES = "![Alt Text](http://example.com/image.jpg)"
 
 class TextNode:
-    def __init__(self, text_type: TextTypes, text: str):
+    def __init__(self, text_type: TextTypes, text: str, url: str = None):
         self.text_type = text_type
         self.text = text
-        self.url = None
+        self.url = url
 
     def __eq__(self, other):
         if not isinstance(other, TextNode):
@@ -22,3 +22,6 @@ class TextNode:
             self.text_type == other.text_type and
             self.url == other.url
         )
+
+    def __repr__(self):
+        return f"TextNode(type={self.text_type}, text={self.text}, url={self.url})"
